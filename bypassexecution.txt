@@ -2,6 +2,8 @@
 
 Powershell.exe "Get-ExecutionPolicy"
 
+Powershell.exe "Get-ExecutionPolicy" -list 
+
 Powershell.exe -ExecutioPolicy Bypass -File ""
 
 
