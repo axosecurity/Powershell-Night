@@ -1,4 +1,13 @@
 
+#Lest know the Powershell
+Windows PowerShell has four different execution policies:
+
+Restricted - No scripts can be run. Windows PowerShell can be used only in interactive mode.
+AllSigned - Only scripts signed by a trusted publisher can be run.
+RemoteSigned - Downloaded scripts must be signed by a trusted publisher before they can be run.
+Unrestricted - No restrictions; all scripts can be run.
+
+Now Bypass Powershell Execution Policy -------------------------------------------------------------------------------------------------------------------------------
 
 Powershell.exe "Get-ExecutionPolicy"
 
@@ -6,9 +15,11 @@ Powershell.exe "Get-ExecutionPolicy" -list
 
 Powershell.exe -ExecutioPolicy Bypass -File ""
 
+Comand=[Powershell.exe -ExecutionPolicy "Flag" -File "FIlename"       ]
 
 function Disable-ExecutionPolicy {($ctx = $executioncontext.gettype().getfield("_context","nonpublic,instance").getvalue( $executioncontext)).gettype().getfield("_authorizationManager","nonpublic,instance").setvalue($ctx, (new-object System.Management.Automation.AuthorizationManager "Microsoft.PowerShell"))}  Disable-ExecutionPolicy  .runme.ps1
 
 Set-ExecutionPolicy Bypass -Scope Process
+Set
 
 
